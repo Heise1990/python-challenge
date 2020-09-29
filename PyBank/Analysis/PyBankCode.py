@@ -1,8 +1,13 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 29 15:35:08 2020
+import csv
 
-@author: jordanheise
-"""
+months = [0]
+profit_loss_changes = [1]
+count_months = 0
+net_profit_loss = 0
+previous_month_profit_loss = 0
+profit_loss_change = 0
 
+with open ('/Users/jordanheise/Desktop/nu-chi-data-pt-09-2020-u-c/03-Python/HW/Instructions/PyBank/Resources/budget_data.csv') as csvfile:
+     csvreader = csv.reader(csvfile, delimiter=",")
+     header_row = next(csvfile)
+     print(f"Header: {header_row}")
