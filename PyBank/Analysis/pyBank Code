@@ -1,0 +1,22 @@
+import csv
+import pandas as pd
+
+budgetData = pd.read_csv('/Users/jordanheise/Desktop/python-challenge/PyBank/Resources/budget_data.csv')
+
+
+with open('/Users/jordanheise/Desktop/python-challenge/PyBank/Resources/budget_data.csv') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)
+        
+print("Financial Analysis")
+print("--------------------------")
+
+numberOfMonths = len(budgetData['Date'])
+sum_PL = budgetData['Profit/Losses'].sum()
+print("Total Months: ",numberOfMonths)
+print("Total: ", sum_PL)
+
+# need to determine average change. 
+# subtract last months PL from current months PL.
+# average each of those values
