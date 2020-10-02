@@ -1,19 +1,1 @@
-import pandas        
-import datetime
-
-end_date = datetime.datetime(2017,2,1)
-start_date = datetime.datetime(2010, 1, 1)
-
-num_months = (end_date.year - start_date.year) * 12 + (end_date.month - start_date.month)
-
-
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
-print("Financial Analysis")
-print("--------------------------")
-print("Total Months:", num_months)
-
-
-budgetData = pandas.read_csv('/Users/jordanheise/Desktop/python-challenge/PyBank/Resources/budget_data.csv', delimiter=',')
-
-sum_PL = budgetData['Profit/Losses'].sum()
+import csvvotes = []candidates = []with open ('/Users/jordanheise/Desktop/python-challenge/PyPoll/Resources/election_data.csv') as csvfile:    csvreader = csv.reader(csvfile, delimiter=",")        csv_header = next(csvreader)           for column in csvreader:        votes.append(column[0])        candidates.append(column[2])        totalVotes = (len(votes))                totalvotes = (len(votes))            khan = int(candidates.count("Khan"))    khanPerc = round((khan/totalvotes)*100,3)    oTooley = int(candidates.count("O'Tooley"))    oTooleyPerc = round((oTooley/totalvotes)*100,3)    li = int(candidates.count("Li"))    liPerc = round((li/totalvotes)*100,3)    correy = int(candidates.count("Correy"))    correyPerc = round((correy/totalvotes)*100,3)        voteDict = {"Khan": khan, "Correy": correy, "Li": li, "O'Tooley": oTooley}    winner = max(voteDict, key = voteDict.get)        output = (        f"Election Results:\n"    f"----------------------\n"    f"Total Votes {totalvotes}\n"    f"----------------------\n"    f"Khan: {khanPerc}% ({khan})\n"    f"Correy: {correyPerc}% ({correy})\n"    f"Li: {liPerc}% ({li})\n"    f"oTooley: {oTooleyPerc}% ({oTooley})\n"    f"-----------------------\n"    f"Winner: {winner}\n")    print(output)with open("PyPollElectionResults.txt", "w") as txt_file:        txt_file.write(output)
